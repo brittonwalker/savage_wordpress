@@ -1,0 +1,68 @@
+{
+    "key": "group_59ce5b1e06883",
+    "title": "Taxonomy Navigation",
+    "fields": [
+        {
+            "key": "field_59ce5d22900d1",
+            "label": "Taxonomy Navigation",
+            "name": "taxonomy_navigation",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_59ce5d41900d2",
+                    "label": "Taxonomies",
+                    "name": "taxonomies",
+                    "type": "checkbox",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "series": "Series",
+                        "subject": "Subjects",
+                        "medium": "Mediums"
+                    },
+                    "allow_custom": 0,
+                    "save_custom": 0,
+                    "default_value": [
+
+                    ],
+                    "layout": "vertical",
+                    "toggle": 0,
+                    "return_format": "value"
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "page-home.php"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1506699183
+}

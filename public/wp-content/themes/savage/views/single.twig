@@ -1,0 +1,66 @@
+{% extends 'index.twig' %}
+
+{% block content %}
+
+<!-- @todo refactor -->
+<page-header class="page-header">
+
+	{% include 'partials/taxonomy.twig' with {terms: post.terms, taxonomy: 'series', class: 'page-header', parentOnly: true} %}
+	<h1 class="page-header__title title col-md-8 center-block">{{ post.title }}</h1>
+
+	{% include 'partials/post-meta.twig' with {options: {taxonomy: false}} %}
+
+</page-header>
+
+<div class="content post">
+	{% include 'posts/hero.twig' with {hero: post.get_field('hero')} %}
+	{% include 'posts/detail-content-core.twig' %}
+
+	<post-rule class="post-article__hr--branded"></post-rule>
+
+	{% include 'posts/author-bios.twig' %}
+
+	<!-- @todo think / discuss how to handle horizontal rules -->
+
+	{% if post_terms != blank %}
+
+		<post-rule class="post-article__hr"></post-rule>
+
+	{% endif %}
+
+
+	{% include 'navigations/taxonomy/post-taxonomy.twig' with {'terms': post.terms, 't': terms} %}
+
+	<!-- @todo create a comments module -->
+	<div class="comments">
+
+		{% if post.comments|length == 0 %}
+			<button id="comment-button" class="circle-button circle-button--comment">Comment</button>
+		{% else %}
+			<h3 class="comment-title title text-center">Comments</h3>
+			{% include 'partials/comments.twig' with {'comments': post.comments} %}
+		{% endif %}
+		
+		<div class="comments-form {% if post.comments|length == 0 %}comments-form--inactive{% else %}comments-form--active{% endif %}">
+			{{ post.comment_form(
+				{	fields: {
+					   author: '<div id="comment-row" class="row"><formgroup class="formgroup comment-form__formgroup col-6"><label for="comment-form-name" class="label comment-form__label">Name*</label><input id="comment-form-name" name="author" class="author comment-form__input comment-form__name" type="text"></formgroup>',
+					   email: '<formgroup class="formgroup comment-form__formgroup col-6"><label for="comment-form-email" class="label comment-form__label">Email (will not be published)*</label><input id="comment-form-email" name="email" class="email comment-form__input comment-form__email" type="email"></formgroup></div>'
+					},
+					id_form: 'comment-form',
+				    class_form: 'comment-form',
+					comment_notes_before: '',
+					comment_notes_after: '',
+					title_reply: '',
+					id_submit: 'circle-button',
+					class_submit: 'circle-button',
+					label_submit: 'Submit',
+					comment_field: '<formgroup id="comment-message" class="formgroup comment-form__formgroup comment-form__formgroup--textarea"><textarea id="comment" name="comment" class="comment comment-form__textarea comment-form__comment"></textarea></formgroup>'
+				}
+			) }}
+		</div>
+	</div>
+</div>
+{% include 'navigations/posts/related-posts.twig' with {post: post, related_posts: related_posts} %}
+
+{% endblock %}

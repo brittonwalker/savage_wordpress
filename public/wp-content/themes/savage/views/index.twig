@@ -1,0 +1,90 @@
+{% extends 'base.twig' %}
+
+{% block content %}
+	
+	<div class="scrim">
+		<div class="img-container">
+			<img src="" class="insert" alt="">
+		</div>
+	</div>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-lg-3 col-sm-12">
+				<h2 class="headings">PAINTING</h2>
+				<ul class="art-titles">
+					<div class="painting-slideshow">
+						{% for painting in paintings %}
+						<a href="{{ painting.thumbnail.src }}" data-caption="{{ painting.thumbnail.caption }}" data-title="{{ painting.name }}">
+							<img src="{{ painting.thumbnail.src }}" data-caption="{{ painting.thumbnail.caption }}" data-title="{{ painting.name }}" alt="">
+						</a>
+						{% endfor %}
+					</div>
+						
+					{% for painting in paintings %}
+					
+						<li data-test="{{ painting.thumbnail.src }}" data-index="{{ loop.index0 }}">{{ painting.name }}</li>
+
+					{% endfor %}
+
+				</ul>
+			</div>
+			<div class="col-lg-3 col-sm-12">
+				<h2 class="headings">Drawing</h2>
+				<ul class="art-titles">
+					<div class="painting-slideshow">
+						{% for drawing in drawings %}
+						<a href="{{ drawing.thumbnail.src }}" data-caption="{{ drawing.thumbnail.caption }}" data-title="{{ drawing.name }}">
+							<img src="{{ drawing.thumbnail.src }}" data-caption="{{ drawing.thumbnail.caption }}" data-title="{{ drawing.name }}" alt="">
+						</a>
+						{% endfor %}
+					</div>
+						
+					{% for drawing in drawings %}
+					
+						<li data-test="{{ drawing.thumbnail.src }}" data-index="{{ loop.index0 }}">{{ drawing.name }}</li>
+
+					{% endfor %}
+
+				</ul>
+			</div>
+			<div class="col-lg-3 col-sm-12">
+				<h2 class="headings">Album Art</h2>
+				<ul class="art-titles">
+					<div class="painting-slideshow">
+						{% for art in album_art %}
+						<a href="{{ art.thumbnail.src }}" data-caption="{{ art.thumbnail.caption }}" data-title="{{ art.name }}">
+							<img src="{{ art.thumbnail.src }}" data-caption="{{ art.thumbnail.caption }}" data-title="{{ art.name }}" alt="">
+						</a>
+						{% endfor %}
+					</div>
+						
+					{% for art in album_art %}
+					
+						<li data-test="{{ art.thumbnail.src }}" data-index="{{ loop.index0 }}">{{ art.name }}</li>
+
+					{% endfor %}
+
+				</ul>
+			</div>
+			<div class="col-lg-3 col-sm-12">
+				<h2 class="headings">Other</h2>
+				<ul class="art-titles">
+					<div class="painting-slideshow">
+						{% for art in other %}
+						<a href="{{ art.thumbnail.src }}" data-caption="{{ art.thumbnail.caption }}" data-title="{{ art.name }}">
+							<img src="{{ art.thumbnail.src }}" data-caption="{{ art.thumbnail.caption }}" data-title="{{ art.name }}" alt="">
+						</a>
+						{% endfor %}
+					</div>
+						
+					{% for art in other %}
+					
+						<li data-test="{{ art.thumbnail.src }}" data-index="{{ loop.index0 }}">{{ art.name }}</li>
+
+					{% endfor %}
+				</ul>
+			</div>
+		</div>
+	</div>
+	
+{% endblock %}

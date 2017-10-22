@@ -1,0 +1,1 @@
+@todo discuss package management solutions for shared dependencies

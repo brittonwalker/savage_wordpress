@@ -1,0 +1,105 @@
+<!doctype html>
+<!--[if IE 9]><html class="no-js lt-ie10" {{ site.language_attributes }}> <![endif]-->
+<!--[if gt IE 9]><!--><html class="no-js" {{ site.language_attributes }}> <!--<![endif]-->
+<!--[if IE 9]>
+      <link href="{{ theme.link }}/assets/css/bootstrap-ie8.css" rel="stylesheet">
+      <script src="https://cdn.jsdelivr.net/g/html5shiv@3.7.3,respond@1.4.2"></script>
+<![endif]-->
+<!--[if lte IE 8]>
+<script type="text/javascript">
+  if ( document.URL.indexOf( 'ie8' ) === -1 ) {
+    window.location = 'http://' + location.hostname + '/ie8';
+  }
+</script>
+<![endif]-->
+
+  <head>
+    {% block head %}
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>{{ wp_title }}</title>
+
+    {% endblock %}
+
+    <script>
+      document.documentElement.className = document.documentElement.className.replace( 'no-js', 'js' );
+    </script>
+
+    {{ function( 'wp_head' ) }}
+
+  </head>
+
+  <body class="{{ body_class }} {% block extra_body_class %}{% endblock %}">
+
+    <div class="container">
+      <span data-load-indicator></span>
+    </div>
+
+    <header>
+      {% block header %}
+      {% endblock %}
+    </header>
+
+    <div class="page-wrapper">
+      {% block content %}
+      {% endblock %}
+    </div>
+
+    <footer>
+        
+        {% block footer %}
+
+            <div class="container-fluid desktop-footer">
+            	<div class="row">
+            		<div class="col-12">
+            			<table>
+            				<tr>
+            					<td class="footer-name">
+                                    <h1>A.</h1>
+                					<h1>Savage</h1>
+                                </td>
+            					<td>
+            						<div class="float-right">
+                                        <div class="footer-nav">
+                                            <a href="{{ site.url }}" class="{{ post.post_name == 'about' ? '' : 'selected' }}">Work</a>
+                                            <span> / </span>
+                                            <a href="{{ site.url }}/about" class="{{ post.post_name == 'about' ? 'selected' }}">About</a>
+                                        </div>
+            						</div>
+            					</td>
+            				</tr>
+            			</table>
+            		</div>
+            	</div>
+            </div>
+            
+            <div class="mobile-footer">
+                <div class="name-and-circle">
+                    <div class="name-wrapper footer-name">
+                        <h1>A.</h1>
+                        <h1>Savage</h1>
+                    </div>
+                    <div class="circle-wrapper float-right">
+                        <div class="circle"></div>
+                    </div>
+                </div>
+                <div class="footer-link">
+                    <div class="footer-nav">
+                        <a href="{{ site.url }}" class="{{ post.post_name == 'about' ? '' : 'selected' }}">Work</a>
+                        <span> / </span>
+                        <a href="{{ site.url }}/about" class="{{ post.post_name == 'about' ? 'selected' }}">About</a>
+                    </div>
+                </div>
+            </div>
+
+        {% endblock %}
+
+    </footer>
+
+    {{ function( 'wp_footer' ) }}
+
+  </body>
+
+</html>

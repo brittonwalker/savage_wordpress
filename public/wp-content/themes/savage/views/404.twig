@@ -1,0 +1,28 @@
+{% extends 'base.twig' %}
+
+{% block header %}
+
+{% include 'partials/header.twig' %}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="content">
+
+	<!-- four oh four message -->
+	<div class="half-container fourohfour">
+  		<block class="accent"><span>404</span></block>
+		<block class="accent">Page Not Found</block>
+	    <block class="accent"><span><a href="{{site.url}}" class="home-link">Return Home</a></span></block>
+	</div>
+
+	{% for media_item in post.get_field('taxonomy_navigation') %}
+		{% include 'navigations/taxonomy/taxonomy.twig' with {navigation: media_item, taxonomies: taxonomies} %}
+	{% endfor %}
+</div>
+{% endblock %}
+
+{% block footer %}
+	{% include 'partials/footer.twig' %}
+{% endblock %}

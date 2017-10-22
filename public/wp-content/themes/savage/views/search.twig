@@ -1,0 +1,38 @@
+{% extends 'base.twig' %}
+
+{% block header %}
+
+<!-- @todo create custom taxonomies -->
+<!-- @todo replace content with object tags -->
+<!-- @todo replace svg -->
+{% include 'partials/header.twig' %}
+
+{% endblock %}
+
+{% block content %}
+
+	<div class="content">
+
+		<!-- subheading -->
+		<div class="alt-subheading">
+			<h3>Search Results: {{search_term}} </h3>
+>
+		<section class="post-archive">
+
+			{% for post in results %}
+				{% include 'archives/partials/post-preview.twig' with {post: post, index: loop.index, terms: terms, taxonomy: taxonomy} %}
+			{% endfor %}
+
+		<!-- end archive item template -->
+		</section>
+		<!--  -->
+		{% include 'archives/partials/pagination.twig'  %}
+
+
+	</div>
+
+{% endblock %}
+
+{% block footer %}
+	{% include 'partials/footer.twig' %}
+{% endblock %}

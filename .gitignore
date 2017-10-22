@@ -1,0 +1,6 @@
+.DS_STORE
+.vagrant
+config_custom.yml
+npm-debug.log
+Vagrantfile
+node_modules
