@@ -254,6 +254,11 @@ li:hover {
 #wpadminbar {
 	display: none;
 }
+.footer-name {
+	h1 {
+		display: inline-block;
+	}
+}
 
 @media (max-width: 991px) {
 	.mobile-footer {
@@ -277,11 +282,6 @@ li:hover {
 		}
 		.footer-nav {
 			float: right;
-		}
-	}
-	.footer-name {
-		h1 {
-			display: inline-block;
 		}
 	}
 	.right-container {
