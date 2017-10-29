@@ -7,11 +7,14 @@
 			<div class="col-sm-12 col-md-3">
 				<div class="">
 					<h2 class="headings">BIO</h2>
-					{{ post.get_field('about_me') }}
+                    <p>Born in Denton, TX 1986</p>
+                    <p>Lives and works in New York, NY</p>
 				</div>
 				<div class="">
 					<h2 class="headings">education</h2>
-					{{ post.get_field('education') }}
+                    <span class="d-block">2008 </span>
+                    <span class="d-block">-</span>
+                    <p>BFA, Drawing and Painting, University of North Texas, Denton, TX</p>
 				</div>
 				<div class="">
 					<h2 class="headings">contact</h2>
@@ -61,7 +64,7 @@
                     {% for commission in post.get_field('commissions') %}
                         <span class="d-block">{{ commission.year }}</span>
                         <span class="d-block">-</span>
-                        {{ commission.commissions    }}
+                        {{ commission.commisions    }}
                     {% endfor %}
                 </div>
                 <div class="">
@@ -69,7 +72,7 @@
                     {% for item in post.get_field('bibliography') %}
                         <span class="d-block">{{ item.year }}</span>
                         <span class="d-block">-</span>
-                        {{ item.bibliographies }}
+                        {{ item.biliographies }}
                     {% endfor %}
                 </div>
 			</div>
