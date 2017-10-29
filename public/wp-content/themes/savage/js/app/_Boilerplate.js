@@ -19,8 +19,12 @@ class Boilerplate {
         ]
 
         var color = colors[Math.floor(Math.random() * colors.length)];
+        
+        var changeColor = function(color) {
+            $('body').addClass(color);
+        }
 
-        $('body').addClass(color);
+        changeColor(color);
 
         var lightboxOpen = false;
 
@@ -84,7 +88,14 @@ class Boilerplate {
                 captionPosition: 'top',
                 useHistoryApi: 'true',
                 background: 'rgba(255, 255, 255, 1)',
-                imageMaxHeight: .6
+                imageMaxHeight: .9
+            })
+            .on({
+              'hide.slickLightbox': function(){ 
+                  $('body').removeClass('peach green yellow purple');
+                  var color = colors[Math.floor(Math.random() * colors.length)];
+                  changeColor(color); 
+              }
             });
         });
 
@@ -95,6 +106,7 @@ class Boilerplate {
             $(this).parent().find('.painting-slideshow img').eq($(this).data('index')).trigger('click');
 
         });
+        
 
 
         $('.circle').on('click', function() {
@@ -115,6 +127,10 @@ class Boilerplate {
 
         var footerHeight = $('footer').height() + 40;
         $('.page-wrapper').css('margin-bottom', footerHeight);
+        
+
+          
+
 
     }
 
