@@ -71,6 +71,8 @@ class Boilerplate {
                 // slidesToShow: 3,
                 fade: true,
                 slidesToScroll: 1,
+                prevArrow: leftArrow,
+                nextArrow: rightArrow,
                 mobileFirst: true
             })
             .slickLightbox({
@@ -81,8 +83,9 @@ class Boilerplate {
                     fade: true,
                     slidesToScroll: 1,
                     mobileFirst: true,
+                    arrows: true,
                     prevArrow: leftArrow,
-                    nextArrow: rightArrow
+                    nextArrow: rightArrow,
                 },
                 caption: 'caption',
                 captionPosition: 'top',
