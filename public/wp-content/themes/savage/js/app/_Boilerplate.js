@@ -68,7 +68,7 @@ class Boilerplate {
         $slideshow.each(function() {
             $(this).slick({
                 infinite: true,
-                // slidesToShow: 3,
+                slidesToShow: 3,
                 fade: true,
                 slidesToScroll: 1,
                 prevArrow: leftArrow,
@@ -78,7 +78,7 @@ class Boilerplate {
             .slickLightbox({
                 navigateByKeyboard: true,
                 slick: {
-                    infinite: true,
+                    // infinite: true,
                     // slidesToShow: 3,
                     fade: true,
                     slidesToScroll: 1,
@@ -91,7 +91,7 @@ class Boilerplate {
                 captionPosition: 'top',
                 useHistoryApi: 'true',
                 background: 'rgba(255, 255, 255, 1)',
-                imageMaxHeight: .9
+                imageMaxHeight: .8
             })
             .on({
               'hide.slickLightbox': function(){ 

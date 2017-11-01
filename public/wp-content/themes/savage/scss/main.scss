@@ -1,6 +1,7 @@
 @import "bootstrap";
 @import "vendor/slick";
 @import "vendor/slick-lightbox";
+@import "fonts";
 
 // Colors
 $peach:  #ffd3c2;
@@ -43,10 +44,12 @@ $purple: #d3d7ee;
 .headings {
 	display: inline-block;
 	font-size: 20px;
-	line-height: 28px;
+	line-height: 24px;
 	text-transform: uppercase;
 	border-bottom: 1px solid black;
 	margin: 15px 0;
+	font-family: 'Basis Grotesque Mono';
+	font-weight: normal;
 }
 .float-right {
 	float: right;
@@ -123,6 +126,9 @@ p {
 	list-style-type: none;
 	padding: 0;
 	margin: 0;
+	font-family: 'Leitura';
+	font-size: 20px;
+	line-height: 24px;
 	
 	li {
 		padding-bottom: 1rem;
@@ -257,8 +263,11 @@ li:hover {
 	display: none;
 }
 .footer-name {
+	font-family: 'Leitura Roman 3';
 	h1 {
 		display: inline-block;
+		font-size: 32px;
+		line-height: 30px;
 	}
 }
 
@@ -269,6 +278,19 @@ li:hover {
 		cursor: pointer;
 	}
 	z-index: 10;
+}
+.footer-nav {
+	font-size: 20px;
+	line-height: 24px;
+	font-family: 'Basis Grotesque Mono';
+	font-weight: normal;
+	a {
+		font-size: 20px;
+		line-height: 24px;
+		font-family: 'Basis Grotesque Mono';
+		font-weight: normal;
+		
+	}
 }
 
 @media (max-width: 991px) {
@@ -281,6 +303,7 @@ li:hover {
 	.footer-nav {
 		float: right;
 	    padding: 0 15px;
+		font-size: 20px;
 	}
 	.mobile-footer-container {
 		width: 200vw;
@@ -294,6 +317,9 @@ li:hover {
 		.footer-nav {
 			float: right;
 		}
+	}
+	.footer-link {
+		padding: 0;
 	}
 	.right-container {
 		width: 80vw;
