@@ -333,8 +333,10 @@ body {
 		position: relative;
 	}
 	.slick-lightbox-slick-title {
-		display: block;
+		display: inline-block;
 		position: relative;
+		width: auto;
+		margin-bottom: 10px;
 	}
 	.slick-lightbox .slick-prev {
 		position: absolute;
