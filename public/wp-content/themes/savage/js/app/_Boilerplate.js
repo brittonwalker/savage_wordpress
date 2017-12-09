@@ -127,13 +127,8 @@ class Boilerplate {
             }
         });
 
-
         var footerHeight = $('footer').height() + 40;
         $('.page-wrapper').css('margin-bottom', footerHeight);
-        
-
-          
-
 
     }
 
