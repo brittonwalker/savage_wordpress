@@ -52,7 +52,34 @@ import slick from './slick.min'
                 } else {
                     imgSourceParams = ' src="' + source + '" ';
                 }
-                return '<div class="slick-lightbox-slick-item">\n <div class="slick-lightbox-slick-header">\n ' + title + caption + '</div> <div class="slick-lightbox-slick-item-inner">\n    <img class="slick-lightbox-slick-img" ' + imgSourceParams + ' />\n    ' + '\n  </div>\n</div>';
+                return `<div class="slick-lightbox-slick-item">
+                            <div class="slick-flex-container">
+                                <div class="slick-lightbox-slick-header">
+                                    <div class="container-fluid">
+                                        <div class="row">
+                                            <div class="col-12 col-md-4 text-md-left">${title}</div>
+                                            <div class="col-12 col-md-4">${caption}</div>
+                                            <div class="col-12 col-md-4"></div>
+                                        </div>
+                                    </div>
+                                </div> 
+                                <div class="slick-lightbox-slick-item-inner">
+                                    <img class="slick-lightbox-slick-img" ' ${imgSourceParams} />
+                                </div>
+                                <div class="slick-footer">
+                                    <div class="container-fluid">
+                                        <div class="row">
+                                            <div class="col-12 text-left">
+                                                <div class="footer-name">
+                                                    <h1>A.</h1> 
+                                                    <h1>Savage</h1>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>`;
             };
             if (this.options.images) {
                 links = $.map(this.options.images, function (_this) {
